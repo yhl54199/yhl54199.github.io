@@ -264,7 +264,7 @@
               
                 
                 <a class="post-title-link" href="/2017/01/02/understand-this-in-js/" itemprop="url">
-                  未命名
+                  两个方法真正掌握js中的this
                 </a>
               
             
@@ -318,8 +318,7 @@
       
         
           
-            <hr>
-<h2 id="title-两个方法真正掌握js中的this"><a href="#title-两个方法真正掌握js中的this" class="headerlink" title="title 两个方法真正掌握js中的this"></a>title 两个方法真正掌握js中的this</h2><p>作为一个jser，编码生涯中最经常碰到的一个问题就是<code>this</code>指向问题，在看了N多资料后，大家得出了一个结论：<code>this</code>总是指向函数的调用者。当时看到这个答案的时候，我的想法是“我擦，终于有一个标准了”，但是在编码实践中，却发现这句标准很难应用起来，甚至不是准确的。</p>
+            <p>作为一个jser，编码生涯中最经常碰到的一个问题就是<code>this</code>指向问题，在看了N多资料后，大家得出了一个结论：<code>this</code>总是指向函数的调用者。当时看到这个答案的时候，我的想法是“我擦，终于有一个标准了”，但是在编码实践中，却发现这句标准很难应用起来，甚至不是准确的。</p>
 <p>最近在看了《你不知道的js》（<a href="https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md" target="_blank" rel="external">You-Dont-Know-JS</a>）之后，对<code>this</code>有了更加准确和完整的认识，现总结出来分享给大家。</p>
 <h2 id="结论：掌握this的两个方法"><a href="#结论：掌握this的两个方法" class="headerlink" title="结论：掌握this的两个方法"></a>结论：掌握<code>this</code>的两个方法</h2><h3 id="1-this的指向是在运行时决定的（心法）"><a href="#1-this的指向是在运行时决定的（心法）" class="headerlink" title="1 this的指向是在运行时决定的（心法）"></a>1 this的指向是在运行时决定的（心法）</h3><h3 id="2-函数调用时，前面是否有对象修饰，有，则一般this指向该对象，无，则一般指向window（在严格模式下，为undefined）"><a href="#2-函数调用时，前面是否有对象修饰，有，则一般this指向该对象，无，则一般指向window（在严格模式下，为undefined）" class="headerlink" title="2 函数调用时，前面是否有对象修饰，有，则一般this指向该对象，无，则一般指向window（在严格模式下，为undefined）"></a>2 函数调用时，前面是否有对象修饰，有，则一般<code>this</code>指向该对象，无，则一般指向window（在严格模式下，为undefined）</h3><ul>
 <li>方法二的一般情况，指的是函数内部没有apply、call、bind、new、es6的箭头函数等，一般情况已经足以帮我们分辨<code>this</code>了，对于其他情况，由于有明确的指定<code>this</code>的操作，我们反而不容易被迷惑</li>
